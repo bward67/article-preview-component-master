@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+  --very-dark-grayish-blue: #48556a;
+  --desaturated-dark-blue: #6d7f97;
+  --grayish-blue: #9eafc2;
+  --light-grayish-blue: #ecf2f8;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  background-color: var(--light-grayish-blue);
+  display: grid;
+  place-items: center;
+  margin: 100px 30px;
+}
+h1,
+h3,
+h4 {
+  color: #6d7f97;
+  font-weight: 700;
+}
+h1 {
+  font-size: 1.1rem;
+}
+p {
+  color: #9eafc2;
+  font-size: 0.92rem;
+}
+.main-container {
+  max-width: 30em;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: 230px 1fr;
+  justify-items: center;
+  align-content: center;
+  border-radius: 8px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+.sectionOne {
+  width: 350px;
+  height: 230px; /*This cropped the image from the bottom*/
+  overflow: hidden;
+}
+.avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.sectionTwo {
+  margin: 30px;
+}
+.sectionTwo__top {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sectionTwo__bottom-left {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.sectionTwo__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTwo__top p {
+  line-height: 25px;
+  margin-bottom: 1.5rem;
+}
+.share-container {
+  left: 12px;
+  bottom: -111px;
+  position: absolute; /*I had this originally as postion: absolute but changed it after I set up all the social icons inside of it*/
+  /*z-index: 0;*/
+  width: 350px;
+  height: 110px;
+  gap: 22px;
+  border-radius: 0 0 8px 8px;
+  background-color: #48556a;
+  /*padding: 25px 30px;*/
+}
+.share-container > * {
+  position: absolute;
+}
+
+.triangle-box {
+  display: none;
+}
+
+.share {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1rem;
+  top: 40%;
+  left: 2rem;
+}
+.facebook {
+  top: 40%;
+  left: 8rem;
+}
+.twitter {
+  top: 42%;
+  left: 10rem;
+}
+.pinterest {
+  top: 40%;
+  left: 12rem;
+}
+.hide {
+  display: none;
+  /*visibility: hidden;*/
+}
+.arrow {
+  position: relative;
+  align-self: center;
+  z-index: 2;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: var(
+    --light-grayish-blue
+  ); /*so I needed
+  to use background-color and NOT color to make this work*/
+}
+.arrow:hover {
+  cursor: pointer;
+  color: #ffffff !important; /*this is not working to make my arrow white - so what will??*/
+  background-color: var(--desaturated-dark-blue);
+
+  /*filter: invert(50%);
+  filter: saturate(100) hue-rotate(241.5deg); to try to get the image to go white BUT this makes it all go yellow*/
+}
+
+@media (min-width: 568px) {
+  .main-container {
+    max-width: 600px;
+    grid-template-columns: 240px 1fr;
+  }
+  .sectionOne {
+    width: 240px; /*this crops the image on the right-hand side*/
+  }
+  .sectionOne img {
+    flex-basis: 35%;
+    height: 240px;
+    max-width: 500px;
+  }
+  .sectionTwo {
+    flex-basis: 65%;
+    margin: 1.5rem;
+  }
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+  .sectionTwo__top p {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.7;
+  }
+  .sectionTwo__text h4 {
+    font-size: 0.7rem;
+  }
+  .sectionTwo__text p {
+    font-size: 0.7rem;
+  }
+  .arrow {
+    width: 10%;
+  }
+  .triangle-box {
+    display: block;
+    margin-top: -70px;
+    left: 970px;
+    bottom: 131px;
+    position: absolute;
+    z-index: 0;
+  }
+  .triangle {
+    display: block;
+    background-color: #48556a;
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    margin-right: 40px;
+    rotate: 45deg;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    /*z-index: 10;*/
+  }
+  .share-container {
+    width: 210px;
+    height: 50px;
+    background-color: #48556a;
+    left: 875px;
+    bottom: 141px;
+    position: absolute;
+    /*z-index: 2;*/
+    border-radius: 5px;
+  }
+  .share {
+    left: 23px;
+    top: 17px;
+    font-size: 0.7rem;
+  }
+  .facebook {
+    top: 17px;
+    left: 90px;
+  }
+  .twitter {
+    left: 125px;
+    top: 19px;
+  }
+  .pinterest {
+    left: 160px;
+    top: 17px;
+  }
+}
